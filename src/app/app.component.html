@@ -1,0 +1,40 @@
+<h1>ngModel</h1>
+<p>Nombre: {{person.name}}</p>
+<input type="text" required #nameInput="ngModel" [(ngModel)]="person.name" />
+<p>Valid: {{ nameInput.valid }}</p>
+
+<p>Age: {{person.age}}</p>
+<input type="number" max="40" min="30" required #ageInput="ngModel" [(ngModel)]="person.age" />
+<p>Valid: {{ ageInput.valid }}</p>
+
+
+
+<h1>Eventos</h1>
+<button [disabled] ="btnDisabled">Enviar</button>
+<button (click)="toggleMetodo()">Tuggle botton</button>
+<p>{{person.age}}</p>
+<button (click)="incrementAge()">Age ++</button>
+<div class="box" (scroll)="onScroll($event)">
+  Google Fotos es un lugar más inteligente para poner todas tus fotos y videos, creado para tu forma actual de tomar fotos.
+  Novedades
+Historial de actualizaciones
+7 oct 2022 Versión 6.10
+Gracias por usar Google Fotos. Esta versión contiene correcciones de errores y mejoras de rendimiento.
+
+
+Solucionamos problemas informados por los usuarios y agregamos nuevas funciones para ayudarte a hacer mucho más con Google Fotos.
+</div>
+
+<h1>Propiedades (properties vaiding)</h1>
+<button [disabled] ="btnDisabled">Enviar</button>
+<p>Nombre: {{person.name}}</p>
+<input type="text" [value]="person.name" (keyup)="changeName($event)"/>
+<progress max="100" [value]="person.age"></progress>
+<img width="100" [src]="person.avatar" />
+<hr/>
+
+<h1>Bienvenidos (String interpolation)</h1>
+<h2>{{'Hola'.repeat(5)}}</h2>
+<p>3+3={{3+3}}</p>
+<h3>{{name}}</h3>
+<img src="{{img}}" alt="image"/>
